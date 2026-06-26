@@ -377,10 +377,10 @@ def _personal_key_membership_check(
 
 def _object_permission_to_dict(
     object_permission: Optional[LiteLLM_ObjectPermissionBase],
-) -> Optional[dict]:
+) -> Optional[ObjectPermissionDict]:
     if object_permission is None:
         return None
-    return object_permission.model_dump(exclude_unset=True)
+    return cast(ObjectPermissionDict, object_permission.model_dump(exclude_unset=True))
 
 
 def _personal_key_generation_check(
@@ -2217,7 +2217,7 @@ async def _validate_mcp_servers_for_key_update(
     prisma_client: Any,
     user_api_key_cache: Any,
     is_proxy_admin: bool,
-) -> Optional[dict]:
+) -> Optional[ObjectPermissionDict]:
     """Validate MCP servers in object_permission against the effective team."""
     effective_team_obj = team_obj
     # If team_id isn't being changed, resolve the existing key's team
