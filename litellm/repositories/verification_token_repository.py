@@ -9,6 +9,7 @@ from typing import Any, Dict, List, Optional, Type
 from litellm.models.verification_token import (
     LiteLLM_VerificationToken,
 )
+from litellm.proxy._types import PermissionsDict
 from litellm.repositories.base_repository import BaseRepository
 
 
@@ -116,7 +117,7 @@ class VerificationTokenRepository(BaseRepository[LiteLLM_VerificationToken]):
         budget_duration: Optional[str] = None,
         allowed_cache_controls: Optional[List[str]] = None,
         allowed_routes: Optional[List[str]] = None,
-        permissions: Optional[Dict[str, Any]] = None,
+        permissions: Optional[PermissionsDict] = None,
         org_id: Optional[str] = None,
         created_by: Optional[str] = None,
         object_permission_id: Optional[str] = None,
@@ -183,7 +184,7 @@ class VerificationTokenRepository(BaseRepository[LiteLLM_VerificationToken]):
         budget_duration: Optional[str] = None,
         allowed_cache_controls: Optional[List[str]] = None,
         allowed_routes: Optional[List[str]] = None,
-        permissions: Optional[Dict[str, Any]] = None,
+        permissions: Optional[PermissionsDict] = None,
         org_id: Optional[str] = None,
         created_by: Optional[str] = None,
         object_permission_id: Optional[str] = None,
@@ -238,7 +239,7 @@ class VerificationTokenRepository(BaseRepository[LiteLLM_VerificationToken]):
         budget_duration: Optional[str] = None,
         allowed_cache_controls: Optional[List[str]] = None,
         allowed_routes: Optional[List[str]] = None,
-        permissions: Optional[Dict[str, Any]] = None,
+        permissions: Optional[PermissionsDict] = None,
         blocked: Optional[bool] = None,
         object_permission_id: Optional[str] = None,
         access_group_ids: Optional[List[str]] = None,
