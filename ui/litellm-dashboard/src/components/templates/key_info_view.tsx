@@ -847,6 +847,18 @@ export default function KeyInfoView({
                         ? JSON.stringify(currentKeyData.metadata.model_rpm_limit)
                         : "Unlimited"}
                     </Text>
+                    <Text>
+                      Tag RPM Limits:{" "}
+                      {currentKeyData.metadata?.tag_rpm_limit
+                        ? JSON.stringify(currentKeyData.metadata.tag_rpm_limit)
+                        : "Unlimited"}
+                    </Text>
+                    <Text>
+                      Tag TPM Limits:{" "}
+                      {currentKeyData.metadata?.tag_tpm_limit
+                        ? JSON.stringify(currentKeyData.metadata.tag_tpm_limit)
+                        : "Unlimited"}
+                    </Text>
                   </div>
 
                   <div>
